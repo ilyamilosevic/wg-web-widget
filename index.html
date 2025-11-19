@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script type="module" src="/src/main.js"></script>
+  <title>wg-web-widget</title>
+</head>
+
+<body>
+  <main>
+    <section class="description">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum</p>
+    </section>
+    <section class="tanks">
+    </section>
+    <wg-tooltip id="wg-tooltip" boundary-selector="main" placement="bottom">
+      <form id="form-desktop">
+        <div id="tooltip-content-desktop" class="tooltip-content hidden">
+          <div class="tooltip-content__side">
+            <div class="tooltip-content__header">Комплектация</div>
+            <ul class="tank-types">
+              <li class="tank-types__type">
+                <input type="radio" id="tank-type-standard" name="tank-type" value="standard" checked />
+                <label for="tank-type-standard">Стандартная</label>
+              </li>
+
+              <li class="tank-types__type">
+                <input type="radio" id="tank-type-elite" name="tank-type" value="elite" />
+                <label for="tank-type-elite">Элитная</label>
+              </li>
+
+              <li class="tank-types__type">
+                <input type="radio" id="tank-type-premium" name="tank-type" value="premium" />
+                <label for="tank-type-premium">Премиум</label>
+              </li>
+            </ul>
+            <div class="tooltip-content__header">Количество боев</div>
+            <div class="wg-slider-container">
+              <wg-slider id="battles-slider" name="battles" min="0" max="300" value="0" step="1"></wg-slider>
+            </div>
+          </div>
+          <div class="tooltip-content__side tooltip-content__side--right">
+            <div class="tooltip-content__header">Опыт танка</div>
+            <div class="exp">
+              <div class="exp__icon"></div>
+              <div class="exp__result" id="exp">300</div>
+            </div>
+            <div class="tooltip-content__input-wrapper">
+              <input type="number" class="points-input" id="points">
+            </div>
+          </div>
+        </div>
+      </form>
+    </wg-tooltip>
+    <wg-modal id="wg-modal">
+      <form id="form-mobile">
+        <div id="tooltip-content-mobile" class="tooltip-content hidden">
+          <div class="tooltip-content__header tooltip-content__header--type">Комплектация</div>
+          <ul class="tank-types">
+            <li class="tank-types__type">
+              <input type="radio" id="tank-type-standard-mobile" name="tank-type-mobile" value="standard" checked />
+              <label for="tank-type-standard-mobile">Стандартная</label>
+            </li>
+
+            <li class="tank-types__type">
+              <input type="radio" id="tank-type-elite-mobile" name="tank-type-mobile" value="elite" />
+              <label for="tank-type-elite-mobile">Элитная</label>
+            </li>
+
+            <li class="tank-types__type">
+              <input type="radio" id="tank-type-premium-mobile" name="tank-type-mobile" value="premium" />
+              <label for="tank-type-premium-mobile">Премиум</label>
+            </li>
+          </ul>
+          <div class="tooltip-content__header tooltip-content__header--battles">Количество боев</div>
+          <div class="wg-slider-container">
+            <wg-slider id="battles-slider-mobile" name="battles-mobile" min="0" max="300" value="0"
+              step="1"></wg-slider>
+          </div>
+          <div class="tooltip-content__input-wrapper">
+            <input type="number" class="points-input" id="points-mobile">
+          </div>
+          <div class="tooltip-content__header tooltip-content__header--exp">Опыт танка</div>
+          <div class="exp">
+            <div class="exp__icon"></div>
+            <div class="exp__result" id="exp-mobile">300</div>
+          </div>
+        </div>
+      </form>
+    </wg-modal>
+  </main>
+</body>
+
+</html>
