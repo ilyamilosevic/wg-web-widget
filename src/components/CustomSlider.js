@@ -120,7 +120,6 @@ export class CustomSlider extends HTMLElement {
         this._max = parseFloat(this.getAttribute("max") || "100");
         this._step = parseFloat(this.getAttribute("step") || "1");
         
-        // Initialize value from attribute
         if (!this.hasAttribute("value")) {
             this.setAttribute("value", this._min);
         }
@@ -213,7 +212,6 @@ export class CustomSlider extends HTMLElement {
         const percentage = Math.max(0, Math.min(1, x / rect.width));
         this.setValueFromPercentage(percentage);
         
-        // Start dragging immediately when touching the container
         this.isDragging = true;
     }
 
@@ -266,7 +264,6 @@ export class CustomSlider extends HTMLElement {
         this.thumb.style.left = `${position}%`;
     }
 
-    // Getters and setters for properties
     get min() {
         return this._min;
     }

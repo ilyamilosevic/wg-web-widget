@@ -153,7 +153,6 @@ export class Tooltip extends HTMLElement {
         this._updatePosition();
       }
     } else if (name === "for") {
-      // Re-attach events when target changes
       this._removeEvents();
       this._resolveTarget();
       this._attachEvents();
@@ -208,7 +207,6 @@ export class Tooltip extends HTMLElement {
 
     this.targetEl = document.getElementById(forAttr);
     if (!this.targetEl) {
-      // Try as a selector
       try {
         this.targetEl = document.querySelector(forAttr);
       } catch (e) {
